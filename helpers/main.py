@@ -1,5 +1,5 @@
 from typing import List
-
+from flask import jsonify
 
 def slice(listo: List = [], start: int = 0, stop: int = 1) -> []:
     result: List = []
@@ -15,3 +15,6 @@ def slice(listo: List = [], start: int = 0, stop: int = 1) -> []:
                 start += 1
     return result
 
+
+def resJson(code:int,msg:str):
+   return jsonify({"ResponseCode":code,"ResponseMessage":msg})
