@@ -16,5 +16,8 @@ def slice(listo: List = [], start: int = 0, stop: int = 1) -> []:
     return result
 
 
-def resJson(code:int,msg:str):
-   return jsonify({"ResponseCode":code,"ResponseMessage":msg})
+def resJson(**kwargs):
+   resp = {}
+   for key in kwargs:
+       resp[key] = kwargs[key]     
+   return jsonify(resp)
