@@ -1,6 +1,8 @@
 import mysql.connector as connection
-from settings import DBHOST,DBPASS,DBPORT,DBUSER
+from settings import DBHOST, DBPASS, DBPORT, DBUSER
 
 
 MySQLError = connection.Error
-con = connection.connect(host=DBHOST,port=DBPORT,user=DBUSER,password=DBPASS)
+dbconfig = {"username": DBUSER, "host": DBHOST, "passwd": DBPASS, "port": DBPORT}
+con = connection.MySQLConnection(**dbconfig)
+
