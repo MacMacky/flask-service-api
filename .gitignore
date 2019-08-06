@@ -1,4 +1,5 @@
 templates
 __pycache__
 .env
-.vscode
+# .vscode
+Logs
