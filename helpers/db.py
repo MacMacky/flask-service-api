@@ -1,5 +1,5 @@
 import mysql.connector as connection
-from settings import DBHOST, DBPASS, DBPORT, DBUSER
+from config import DBHOST, DBPASS, DBPORT, DBUSER
 
 
 MySQLError = connection.Error
