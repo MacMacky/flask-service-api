@@ -11,4 +11,4 @@ DBHOST = getenv("DBHOST")
 DBPORT = getenv("DBPORT")
 DBUSER = getenv("DBUSER")
 DBPASS = getenv("DBPASSWORD")
-
+LOGS_PATH = getenv("LOGS_PATH_DEV") if getenv("ENV") == "development"  else getenv("LOGS_PATH_PROD")
