@@ -1,4 +1,4 @@
-from typing import List
+from typing import List,Tuple
 from flask import jsonify
 
 def slice(listo: List = [], start: int = 0, stop: int = 1) -> []:
@@ -21,3 +21,11 @@ def resJson(**kwargs):
    for key in kwargs:
        resp[key] = kwargs[key]     
    return jsonify(resp)
+
+
+def result_dict(column_names:Tuple[str], datas:List[str]) -> List[dict]:
+    result : List[dict] = []
+    for i in range(len(datas)):
+      result.append({column_names[z] : datas[i][z] for z in range(len(datas[i]))})
+    return result
+   
