@@ -1,4 +1,4 @@
-from typing import List,Tuple
+from typing import List,Tuple,Type
 from flask import jsonify
 
 def slice(listo: List = [], start: int = 0, stop: int = 1) -> []:
@@ -29,3 +29,5 @@ def result_dict(column_names:Tuple[str], datas:List[str]) -> List[dict]:
       result.append({column_names[z] : datas[i][z] for z in range(len(datas[i]))})
     return result
    
+def is_none(val:Type):
+    return val == None
