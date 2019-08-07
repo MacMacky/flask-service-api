@@ -29,7 +29,7 @@ responses = {
 }
 
 
-def res_msg(code: int = 0) -> str:
+def index(code: int = 0) -> str:
     try:
         return responses[code]
     except KeyError as e:
