@@ -17,7 +17,7 @@ def slice(listo: List = [], start: int = 0, stop: int = 1) -> []:
     return result
 
 
-def resJson(**kwargs):
+def resJson(**kwargs) -> str:
    resp = {}
    for key in kwargs:
        resp[key] = kwargs[key]     
@@ -30,7 +30,7 @@ def result_dict(column_names:Tuple[str], datas:List[str]) -> List[dict]:
       result.append({column_names[z] : datas[i][z] for z in range(len(datas[i]))})
     return result
    
-def is_none(val:Type):
+def is_none(val:Type) -> bool:
     return val == None
 
 
