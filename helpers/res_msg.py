@@ -26,6 +26,7 @@ responses = {
     15: "Password Successfully Changed.",
     16: "No Token Provided.",
     17: "Invalid Token.",
+    18: "Successfully Disabled Seller."
 }
 
 
