@@ -49,6 +49,27 @@ def disable_seller():
         return main.resJson(ResponseCode=code,ResponseMessage=msg);
 
 
+@app.route(f"{MAIN_URL}enableSeller",methods=['POST'])
+def enable_seller():
+    con = db.pool.get_connection()
+    cursor = con.cursor()
+    try:
+       body = dict(request.form)
+       email = body.get('email'); id = body.get('merchantID')
+       code =200; msg  = res_msg.index(12)
+       if main.is_none(email) or main.is_none(id):
+           msg = res_msg.index(5); code =463
+       else:
+          cursor.execute(queries.Query(7),[id,email])
+          con.commit()
+    except BaseException as e:
+        msg = e.msg; code = 500
+        con.rollback()
+    finally:
+      con.close();cursor.close()
+      return main.resJson(ResponseCode=code,ResponseMessage=msg)
+
+
 @app.route(f"{MAIN_URL}denySeller",methods=['POST'])
 def deny_seller():
   con = db.pool.get_connection();
