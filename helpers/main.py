@@ -43,3 +43,10 @@ def generate_token_db_name() -> str:
     day = f"0{day}" if len_d == 1 else str(day)
     month = f"0{month}" if len_m == 1 else str(month)
     return f"shopsession{year}{month}{day}.sessiondetails"
+
+def is_file_type_valid(permit:str) -> bool: 
+   if permit == None:
+      return False
+   else:
+      permit_types = ['brgy_clearance','business_permit','police_clearance','valid_id']
+      return permit in permit_types
